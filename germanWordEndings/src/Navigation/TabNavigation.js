@@ -8,18 +8,19 @@ const Tabs = createBottomTabNavigator();
 const TabNavigation = () => {
     return (
         <Tabs.Navigator tabBarOptions={tabBarOptions}>
+             <Tabs.Screen
+                name="examples-screen" 
+                component={Examples}
+                options = {{title: "Examples"
+                           }}
+                />
             <Tabs.Screen
                 name="memorization-screen" 
                 component={Memorization}
                 options= {{title: "Memorization",
                            }}
                 />
-            <Tabs.Screen
-                name="examples-screen" 
-                component={Examples}
-                options = {{title: "Examples"
-                           }}
-                />
+           
         </Tabs.Navigator>
     )
 }
