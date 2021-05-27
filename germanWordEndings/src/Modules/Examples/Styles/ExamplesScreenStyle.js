@@ -107,8 +107,17 @@ const styles = StyleSheet.create({
          paddingLeft: 5,
      },
      buttonContainer: {
-         marginTop: 100,
          backgroundColor: 'lightgrey'
-     }
+     },
+     //Sample sentence text
+     textOverButton:{
+        fontSize: 15,
+        alignSelf: 'center'
+    },
+     textOverButtonContainer:{
+         marginTop: 100,
+         marginBottom: 10
+     },
+     
 })
 export default styles
