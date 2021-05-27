@@ -3,7 +3,6 @@ import { Text, View, TouchableOpacity } from 'react-native'
 import { Picker } from '@react-native-picker/picker';
 import Metrics from '../../../StylingConstants/Metrics';
 import Button from '../Component/Button';
-import style from '../Styles/ExamplesScreenStyle';
 import styles from '../Styles/ExamplesScreenStyle';
 
 const Examples = () => {
@@ -21,15 +20,22 @@ const Examples = () => {
                 <View style={styles.articleBox}>
                     <Picker
                         itemStyle={{ fontSize: 15 }}
+
                         style={styles.articlePicker}
                         selectedValue={articleType}
                         mode="dropdown"
                         onValueChange={(itemValue, itemIndex) => setArticleType(itemValue)
                         }
                     >
-                        <Picker.Item color="black" label="No" value="no" />
+
+
                         <Picker.Item color="black" label="Indefinite" value="indefinite" />
                         <Picker.Item color="black" label="definite" value="definite" />
+                        {(hasAdjective != 'without')
+                            ?
+                            <Picker.Item color="black" label="No" value="no" />
+                            :
+                            null}
                     </Picker>
                 </View>
                 <Text style={styles.textAfterArticle}>article</Text>
@@ -42,7 +48,13 @@ const Examples = () => {
                         mode="dropdown"
                         onValueChange={(itemValue, itemIndex) => setHasAdjective(itemValue)}>
                         <Picker.Item color="black" label="with" value="with" />
-                        <Picker.Item color="black" label="without" value="without" />
+
+                        {(articleType != 'no') ?
+                            <Picker.Item color="black" label="without" value="without" />
+                            :
+                            null
+                        }
+
                     </Picker>
                 </View>
                 <Text style={styles.textAfterAdjective}>adjective</Text>
@@ -82,6 +94,9 @@ const Examples = () => {
                     </Picker>
                 </View>
                 <Text style={styles.textAfterCase}>case</Text>
+            </View>
+            <View style={styles.textOverButtonContainer}>
+                <Text style={styles.textOverButton}>Sample Sentence</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <Button articleType={articleType} hasAdjective={hasAdjective}
