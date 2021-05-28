@@ -8,9 +8,6 @@ const OneOrMultiline = (props) => {
     const valueArticle = props.article;
     const valueAdjective = props.adjective
 
-    if(multiline){
-        console.log("valueArticle", valueArticle)
-    }
     return (
         <View style={style}>
             {!multiline ?
