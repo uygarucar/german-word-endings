@@ -5,7 +5,7 @@ import Metrics from '../../../StylingConstants/Metrics';
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        marginTop: Metrics.height * 0.10
+        marginTop: Metrics.height * 0.10,
     },
     //article related styles
     articleContainer:{
@@ -14,25 +14,26 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start'
     },
      textBeforeArticle:{
-         marginLeft: 30,
-         fontSize: 15,
-         paddingRight: 3
+         marginLeft: Metrics.width * 0.13,
+         fontSize: Metrics.width * 0.04,
+         paddingRight: Metrics.width * 0.02
      },
      articleBox: {
-         flex: 0.7,
+         flex: 0.8,
          borderWidth: 1,
-         backgroundColor: '#E7F194'
+         backgroundColor: '#E7F194',
+         borderRadius: Metrics.width * 0.02,
+         
      },
      articlePicker:{
          color: 'black',
          width: "100%"
      },
      textAfterArticle:{
-        fontSize: 15,
-        marginRight: 50,
-        paddingRight: -5,
-        paddingLeft: 5,
-        flex: 0.5
+        fontSize: Metrics.width * 0.04,
+        marginRight: Metrics.width * 0.12,
+        paddingLeft: Metrics.width * 0.01,
+        flex: 0.4
      },
      //adjective related styles
      adjectiveContainer:{
@@ -45,16 +46,17 @@ const styles = StyleSheet.create({
          backgroundColor: '#FFD6F7',
          borderWidth: 1,
          borderColor: 'black',
-         alignContent: 'center'
+         alignContent: 'center',
+         borderRadius: Metrics.width * 0.02,
      },
      adjectivePicker: {
          color: 'black',
          width: "100%"
      },
      textAfterAdjective:{
-         fontSize: 15,
-         marginRight: 1,
-         paddingLeft: 8,
+         fontSize: Metrics.width * 0.04,
+         marginRight: Metrics.width * 0.01,
+         paddingLeft: Metrics.width * 0.015,
          paddingRight: 0,
          flex: 0.2,
          alignSelf: 'center',
@@ -66,20 +68,21 @@ const styles = StyleSheet.create({
          alignItems: 'center',
      },
      textBeforeNounGender:{
-         fontSize: 15,
-         marginLeft: 20,
-         paddingRight: 15,
+         fontSize: Metrics.width * 0.04,
+         marginLeft: Metrics.width * 0.05,
+         paddingRight: Metrics.width * 0.03,
      },
      nounGenderBox:{
          flex: 0.5,
          borderWidth: 1,
          alignContent: 'center',
          flex: 0.55,
-         backgroundColor: '#BBFFBF'
+         backgroundColor: '#BBFFBF',
+         borderRadius: Metrics.width * 0.02,
      },
      textAfterNounGender:{
-         fontSize: 15,
-         paddingLeft: 10,
+         fontSize: Metrics.width * 0.04,
+         paddingLeft: Metrics.width * 0.025,
      },
      //Case related styles
      caseContainer:{
@@ -89,34 +92,43 @@ const styles = StyleSheet.create({
          justifyContent: 'flex-end',
      },
      textBeforeCase:{
-         fontSize: 15,
+         fontSize: Metrics.width * 0.04,
          flex: 0.17
      },
      caseBox:{
          flex: 0.45,
          backgroundColor: '#FFB778',
          borderWidth: 1,
+         borderRadius: Metrics.width * 0.02,
      },
      casePicker:{
          color: 'black',
          width: "100%"
      },
      textAfterCase:{
-         fontSize: 15,
+         fontSize: Metrics.width * 0.04,
          flex: 0.15,
-         paddingLeft: 5,
+         paddingLeft: Metrics.width * 0.01,
      },
      buttonContainer: {
-         backgroundColor: 'lightgrey'
+        backgroundColor: 'lightblue',
+        paddingHorizontal: Metrics.width * 0.01,
+        borderRadius: Metrics.width * 0.02,
+
      },
+     innerButtonContainer:{
+         backgroundColor: '#EBEBEB',
+
+     },
+    
      //Sample sentence text
      textOverButton:{
-        fontSize: 15,
+        fontSize: Metrics.width * 0.04,
         alignSelf: 'center'
     },
      textOverButtonContainer:{
-         marginTop: 100,
-         marginBottom: 10
+         marginTop: Metrics.height*0.11,
+         marginBottom: Metrics.height * 0.02
      },
      
 })

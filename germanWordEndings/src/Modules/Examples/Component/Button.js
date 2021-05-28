@@ -24,7 +24,7 @@ const Button = (props) => {
 
     return (
         <>
-            <TouchableOpacity onPress={_FlipCard} style={{ alignContent: 'center', backgroundColor: 'lightyellow', marginHorizontal: 50, alignItems: 'center' }}>
+            <TouchableOpacity onPress={_FlipCard} style={{ alignContent: 'center',  marginHorizontal: 50, alignItems: 'center' }}>
 
                 {/* {!isGermanVisible ? <Text style={{ fontSize: 15 }}>Sample Sentence</Text>
                     : null

@@ -29,7 +29,7 @@ const Examples = () => {
                     >
 
 
-                        <Picker.Item color="black" label="Indefinite" value="indefinite" />
+                        <Picker.Item color="black" label="indefinite" value="indefinite" />
                         <Picker.Item color="black" label="definite" value="definite" />
                         {(hasAdjective != 'without')
                             ?
@@ -68,9 +68,9 @@ const Examples = () => {
                         selectedValue={nounGenderType}
                         onValueChange={(itemValue, itemIndex) => setNounGenderType(itemValue)}
                     >
-                        <Picker.Item color="black" label="masculine" value="masculine" />
-                        <Picker.Item color="black" label="feminine" value="feminine" />
-                        <Picker.Item color="black" label="neutral" value="neutral" />
+                        <Picker.Item color="black" label="Masculine" value="masculine" />
+                        <Picker.Item color="black" label="Feminine" value="feminine" />
+                        <Picker.Item color="black" label="Neuter" value="neutral" />
                     </Picker>
                 </View>
                 <Text style={styles.textAfterNounGender}>noun</Text>
@@ -99,9 +99,11 @@ const Examples = () => {
                 <Text style={styles.textOverButton}>Sample Sentence</Text>
             </View>
             <View style={styles.buttonContainer}>
-                <Button articleType={articleType} hasAdjective={hasAdjective}
-                    nounGenderType={nounGenderType} caseType={caseType}
-                />
+                <View style={styles.innerButtonContainer}>
+                    <Button articleType={articleType} hasAdjective={hasAdjective}
+                        nounGenderType={nounGenderType} caseType={caseType}
+                    />
+                </View>
             </View>
         </View>
     )
