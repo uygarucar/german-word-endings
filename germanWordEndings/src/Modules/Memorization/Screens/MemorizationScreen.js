@@ -6,18 +6,8 @@ import Metrics from '../../../StylingConstants/Metrics';
 import VisibilityToggle from '../Component/VisibilityToggle'
 import styles from '../Styles/MemorizationStyles'
 
-const DummyData = [
-    {
-        id: 1,
-        title: 'Only adjective',
-        content: 'kleiner Tisch'
-    },
-    {
-        id: 2,
-        title: 'only definite',
-        content: 'der Käse'
-    }
-]
+import TablesData from '../TablesData'
+
 const Memorization = () => {
 
     const _renderItem = ({ item }) => {
@@ -25,7 +15,7 @@ const Memorization = () => {
         return (
             <>
                 <View style={styles.itemContainer}>
-                    <VisibilityToggle title={item.title} content={item.content} itemId={item.id} />
+                    <VisibilityToggle title={item.title} content={item.content} itemId={item.id} multiline={item.isMultiline} />
                 </View>
             </>
         )
@@ -36,7 +26,7 @@ const Memorization = () => {
     return (
         <View>
             <FlatList
-                data={DummyData}
+                data={TablesData}
                 renderItem={_renderItem}
                 keyExtractor={(item) => item.id}
             />
