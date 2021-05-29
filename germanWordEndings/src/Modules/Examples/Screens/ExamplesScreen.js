@@ -5,7 +5,16 @@ import Metrics from '../../../StylingConstants/Metrics';
 import Button from '../Component/Button';
 import styles from '../Styles/ExamplesScreenStyle';
 
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { isGermanSelector } from '../../../Redux/LanguageRedux'
+import { setIsGermanAC } from '../../../Redux/LanguageRedux'
+
 const Examples = () => {
+
+    const dispatch = useDispatch();
+    const isGerman = useSelector(isGermanSelector);
+
     const [articleType, setArticleType] = useState('no');
     const [hasAdjective, setHasAdjective] = useState('with');
     const [nounGenderType, setNounGenderType] = useState('masculine');
@@ -24,7 +33,10 @@ const Examples = () => {
                         style={styles.articlePicker}
                         selectedValue={articleType}
                         mode="dropdown"
-                        onValueChange={(itemValue, itemIndex) => setArticleType(itemValue)
+                        onValueChange={(itemValue, itemIndex) => {
+                            setArticleType(itemValue);
+                            dispatch(setIsGermanAC(false));
+                        }
                         }
                     >
 
@@ -46,7 +58,9 @@ const Examples = () => {
                     <Picker style={styles.adjectivePicker}
                         selectedValue={hasAdjective}
                         mode="dropdown"
-                        onValueChange={(itemValue, itemIndex) => setHasAdjective(itemValue)}>
+                        onValueChange={(itemValue, itemIndex) => 
+                        {setHasAdjective(itemValue);
+                        dispatch(setIsGermanAC(false))}}>
                         <Picker.Item color="black" label="with" value="with" />
 
                         {(articleType != 'no') ?
@@ -66,7 +80,8 @@ const Examples = () => {
                     <Picker
                         mode='dropdown'
                         selectedValue={nounGenderType}
-                        onValueChange={(itemValue, itemIndex) => setNounGenderType(itemValue)}
+                        onValueChange={(itemValue, itemIndex) => {setNounGenderType(itemValue)
+                            dispatch(setIsGermanAC(false))}}
                     >
                         <Picker.Item color="black" label="Masculine" value="masculine" />
                         <Picker.Item color="black" label="Feminine" value="feminine" />
@@ -85,7 +100,8 @@ const Examples = () => {
 
                         selectedValue={caseType}
                         mode="dropdown"
-                        onValueChange={(itemValue, itemIndex) => setCaseType(itemValue)
+                        onValueChange={(itemValue, itemIndex) => {setCaseType(itemValue)
+                            dispatch(setIsGermanAC(false))}
                         }>
                         <Picker.Item color="black" label="Nominative" value="nominative" />
                         <Picker.Item color="black" label="Accusative" value="accusative" />
