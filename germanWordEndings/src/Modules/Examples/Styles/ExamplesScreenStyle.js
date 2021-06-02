@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         marginTop: Metrics.height * 0.10,
+        flex:1
     },
     //article related styles
     articleContainer:{
@@ -114,11 +115,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightblue',
         paddingHorizontal: Metrics.width * 0.01,
         borderRadius: Metrics.width * 0.02,
+        width: Metrics.width * 1,
+        height: Metrics.height * 0.07,
 
      },
      innerButtonContainer:{
          backgroundColor: '#EBEBEB',
-
+         flex:1,
      },
     
      //Sample sentence text
@@ -130,6 +133,16 @@ const styles = StyleSheet.create({
          marginTop: Metrics.height*0.11,
          marginBottom: Metrics.height * 0.02
      },
-     
+     button:{
+        alignContent: 'center',
+        marginHorizontal: Metrics.width * 0.025, 
+        alignItems: 'center' 
+     },
+     clickMessageFontSize:{
+         fontSize: Metrics.width * 0.036
+     },
+     sampleSentencesFontSize:{
+         fontSize: Metrics.width * 0.048
+     }
 })
 export default styles

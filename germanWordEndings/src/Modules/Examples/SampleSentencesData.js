@@ -1,82 +1,6 @@
 import React from 'react'
 import { Text } from 'react-native'
 const SampleSentenceEnglish = {
-    'accusative': {
-        'masculine': {
-            'with': {//there is adj.
-                'no': <Text>He is eating red apple</Text>,//No article
-                'indefinite': <Text>I've seen a good man</Text>, //indefinite article
-                'definite': <Text>I've seen the good man</Text>//definite article
-            },
-            'without': {//no adj.
-                'no': <Text>There is not a word with ending for this combination</Text>, // No article
-                'indefinite': <Text>I've seen a man</Text>, //indefinite article
-                'definite': <Text>I've seen the man</Text> //definite article
-            }
-        },
-        'feminine': {
-            'with': {
-                'no': <Text>He is eating fried potatoes</Text>,
-                'indefinite': <Text>I've seen a good woman</Text>,
-                'definite': <Text>I've seen the good woman</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>I've seen a woman</Text>,
-                'definite': <Text>I've seen the woman</Text>
-            }
-        },
-        'neutral': {
-            'with': {
-                'no': <Text>He is eating fresh bread</Text>,
-                'indefinite': <Text>I've seen a good child</Text>,
-                'definite': <Text>I've seen the good child</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>I've seen a child</Text>,
-                'definite': <Text>I've seen the child</Text>
-            }
-        }
-    },
-    'dative': {
-        'masculine': {
-            'with': {
-                'no': <Text>Pizza tastes best with red wine</Text>,
-                'indefinite': <Text>I've helped a good man</Text>,
-                'definite': <Text>I've helped the good man</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>I've helped a man</Text>,
-                'definite': <Text>I've helped the man</Text>
-            }
-        },
-        'feminine': {
-            'with': {
-                'no': <Text>Beer tastes best with fried potatoes</Text>,
-                'indefinite': <Text>I've helped a good woman</Text>,
-                'definite': <Text>I've helped the good woman</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>I've helped a woman</Text>,
-                'definite': <Text>I've helped the woman</Text>
-            }
-        },
-        'neutral': {
-            'with': {
-                'no': <Text>Cheese tastes best with fresh bread</Text>,
-                'indefinite': <Text>I've helped a good child</Text>,
-                'definite': <Text>I've helped the good child</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>I've helped a child</Text>,
-                'definite': <Text>I've helped the child</Text>
-            }
-        }
-    },
     'nominative': {
         'masculine': {
             'with': {
@@ -104,7 +28,7 @@ const SampleSentenceEnglish = {
         },
         'neutral': {
             'with': {
-                'no': <Text>Warm ice cream is not appealing me</Text>,
+                'no': <Text>Warm ice cream is not appealing to me</Text>,
                 'indefinite': <Text>A good child was looking for you</Text>,
                 'definite': <Text>The good child was looking for you</Text>
             },
@@ -112,6 +36,82 @@ const SampleSentenceEnglish = {
                 'no': <Text>There is not a word with ending for this combination</Text>,
                 'indefinite': <Text>A child was looking for you</Text>,
                 'definite': <Text>The child was looking for you</Text>
+            }
+        }
+    },
+    'accusative': {
+        'masculine': {
+            'with': {//there is adj.
+                'no': <Text>He eats red apple</Text>,//No article
+                'indefinite': <Text>I've seen a good man</Text>, //indefinite article
+                'definite': <Text>I've seen the good man</Text>//definite article
+            },
+            'without': {//no adj.
+                'no': <Text>There is not a word with ending for this combination</Text>, // No article
+                'indefinite': <Text>I've seen a man</Text>, //indefinite article
+                'definite': <Text>I've seen the man</Text> //definite article
+            }
+        },
+        'feminine': {
+            'with': {
+                'no': <Text>He eats fried potato</Text>,
+                'indefinite': <Text>I've seen a good woman</Text>,
+                'definite': <Text>I've seen the good woman</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>I've seen a woman</Text>,
+                'definite': <Text>I've seen the woman</Text>
+            }
+        },
+        'neutral': {
+            'with': {
+                'no': <Text>He eats fresh bread</Text>,
+                'indefinite': <Text>I've seen a good child</Text>,
+                'definite': <Text>I've seen the good child</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>I've seen a child</Text>,
+                'definite': <Text>I've seen the child</Text>
+            }
+        }
+    },
+    'dative': {
+        'masculine': {
+            'with': {
+                'no': <Text>Pizza tastes best with red wine</Text>,
+                'indefinite': <Text>I've helped a good man</Text>,
+                'definite': <Text>I've helped the good man</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>I've helped a man</Text>,
+                'definite': <Text>I've helped the man</Text>
+            }
+        },
+        'feminine': {
+            'with': {
+                'no': <Text>Beer tastes best with fried potato</Text>,
+                'indefinite': <Text>I've helped a good woman</Text>,
+                'definite': <Text>I've helped the good woman</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>I've helped a woman</Text>,
+                'definite': <Text>I've helped the woman</Text>
+            }
+        },
+        'neutral': {
+            'with': {
+                'no': <Text>Cheese tastes best with fresh bread</Text>,
+                'indefinite': <Text>I've helped a good child</Text>,
+                'definite': <Text>I've helped the good child</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>I've helped a child</Text>,
+                'definite': <Text>I've helped the child</Text>
             }
         }
     },
@@ -130,7 +130,7 @@ const SampleSentenceEnglish = {
         },
         'feminine': {
             'with': {
-                'no': <Text>I like the taste of fried potatoes</Text>,
+                'no': <Text>I like the taste of fried potato</Text>,
                 'indefinite': <Text>Money of a good woman is missing</Text>,
                 'definite': <Text>Money of the good woman is missing</Text>
             },
@@ -156,6 +156,44 @@ const SampleSentenceEnglish = {
 }
 ///////////////////////////////////German////////////////////////////////////////////////
 const SampleSentenceGerman = {
+    'nominative': {
+        'masculine': {
+            'with': {
+                'no': <Text>Gelblicher Käse ist bei vielen Menschen beliebt</Text>,
+                'indefinite': <Text>Ein guter Mann hat dich gesucht</Text>,
+                'definite': <Text>Der gute Mann hat dich gesucht</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>Ein Mann hat dich gesucht</Text>,
+                'definite': <Text>Der Mann hat dich gesucht</Text>
+            }
+        },
+        'feminine': {
+            'with': {
+                'no': <Text>Süße Sauce ist bei vielen Menschen beliebt.</Text>,
+                'indefinite': <Text>Eine gute Frau hat dich gesucht</Text>,
+                'definite': <Text>Die gute Frau hat dich gesucht</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>Eine Frau hat dich gesucht</Text>,
+                'definite': <Text>Die Frau hat dich gesucht</Text>
+            }
+        },
+        'neutral': {
+            'with': {
+                'no': <Text>Warmes Eis gefällt mir nicht</Text>,
+                'indefinite': <Text>Ein gutes Kind hat dich gesucht</Text>,
+                'definite': <Text>Das gute Kind hat dich gesucht</Text>
+            },
+            'without': {
+                'no': <Text>There is not a word with ending for this combination</Text>,
+                'indefinite': <Text>Ein Kind hat dich gesucht</Text>,
+                'definite': <Text>Das Kind hat dich gesucht</Text>
+            }
+        }
+    },
     'accusative': {
         'masculine': {
             'with': {//there is adj.
@@ -229,44 +267,6 @@ const SampleSentenceGerman = {
                 'no': <Text>There is not a word with ending for this combination</Text>,
                 'indefinite': <Text>Ich habe einem Kind geholfen</Text>,
                 'definite': <Text>Ich habe dem Kind geholfen</Text>
-            }
-        }
-    },
-    'nominative': {
-        'masculine': {
-            'with': {
-                'no': <Text>Gelblicher Käse ist bei vielen Menschen beliebt</Text>,
-                'indefinite': <Text>Ein guter Mann hat dich gesucht</Text>,
-                'definite': <Text>Der gute Mann hat dich gesucht</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>Ein Mann hat dich gesucht</Text>,
-                'definite': <Text>Der Mann hat dich gesucht</Text>
-            }
-        },
-        'feminine': {
-            'with': {
-                'no': <Text>Süße Sauce ist bei vielen Menschen beliebt.</Text>,
-                'indefinite': <Text>Eine gute Frau hat dich gesucht</Text>,
-                'definite': <Text>Die gute Frau hat dich gesucht</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>Eine Frau hat dich gesucht</Text>,
-                'definite': <Text>Die Frau hat dich gesucht</Text>
-            }
-        },
-        'neutral': {
-            'with': {
-                'no': <Text>Warmes Eis gefällt mir nicht</Text>,
-                'indefinite': <Text>Ein gutes Kind hat dich gesucht</Text>,
-                'definite': <Text>Das gute Kind hat dich gesucht</Text>
-            },
-            'without': {
-                'no': <Text>There is not a word with ending for this combination</Text>,
-                'indefinite': <Text>Ein Kind hat dich gesucht</Text>,
-                'definite': <Text>Das Kind hat dich gesucht</Text>
             }
         }
     },

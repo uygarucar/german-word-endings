@@ -54,9 +54,9 @@ const TablesData = [
                 plural: "guten"
             },
             genitive: {
-                masculine: "guten",
+                masculine: "guten + s",
                 feminine: "guter",
-                neuter: "guten",
+                neuter: "guten + s",
                 plural: "guter"
             }
         }
@@ -196,7 +196,7 @@ const TablesData = [
             }, 
             accusative: {
                 masculine: {
-                    article: "ein",
+                    article: "einen",
                     adjective: "guter"
                 },
                 feminine: {

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native'
+import React, { useState, useEffect } from 'react';
+import { Text, View, TouchableOpacity, SafeAreaView } from 'react-native'
 import { Picker } from '@react-native-picker/picker';
 import Metrics from '../../../StylingConstants/Metrics';
 import Button from '../Component/Button';
@@ -9,8 +9,31 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { isGermanSelector } from '../../../Redux/LanguageRedux'
 import { setIsGermanAC } from '../../../Redux/LanguageRedux'
+import admob, { MaxAdContentRating, BannerAd, TestIds, AdsConsent, BannerAdSize } from '@react-native-firebase/admob';
 
 const Examples = () => {
+
+    /*
+  const consentInfo = await AdsConsent.requestInfoUpdate(['pub-6189033257628123']);
+    */
+
+    useEffect(() => {
+        admob()
+            .setRequestConfiguration({
+                // Update all future requests suitable for parental guidance
+                maxAdContentRating: MaxAdContentRating.PG,
+
+                // Indicates that you want your content treated as child-directed for purposes of COPPA.
+                tagForChildDirectedTreatment: true,
+
+                // Indicates that you want the ad request to be handled in a
+                // manner suitable for users under the age of consent.
+                tagForUnderAgeOfConsent: true,
+            })
+            .then(() => {
+                // Request config successfully set!
+            })
+    }, [])
 
     const dispatch = useDispatch();
     const isGerman = useSelector(isGermanSelector);
@@ -22,7 +45,7 @@ const Examples = () => {
 
     return (
 
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             {/**1. */}
             <View style={styles.articleContainer}>
                 <Text style={styles.textBeforeArticle}>Use </Text>
@@ -58,9 +81,10 @@ const Examples = () => {
                     <Picker style={styles.adjectivePicker}
                         selectedValue={hasAdjective}
                         mode="dropdown"
-                        onValueChange={(itemValue, itemIndex) => 
-                        {setHasAdjective(itemValue);
-                        dispatch(setIsGermanAC(false))}}>
+                        onValueChange={(itemValue, itemIndex) => {
+                            setHasAdjective(itemValue);
+                            dispatch(setIsGermanAC(false))
+                        }}>
                         <Picker.Item color="black" label="with" value="with" />
 
                         {(articleType != 'no') ?
@@ -80,8 +104,10 @@ const Examples = () => {
                     <Picker
                         mode='dropdown'
                         selectedValue={nounGenderType}
-                        onValueChange={(itemValue, itemIndex) => {setNounGenderType(itemValue)
-                            dispatch(setIsGermanAC(false))}}
+                        onValueChange={(itemValue, itemIndex) => {
+                            setNounGenderType(itemValue)
+                            dispatch(setIsGermanAC(false))
+                        }}
                     >
                         <Picker.Item color="black" label="Masculine" value="masculine" />
                         <Picker.Item color="black" label="Feminine" value="feminine" />
@@ -100,8 +126,10 @@ const Examples = () => {
 
                         selectedValue={caseType}
                         mode="dropdown"
-                        onValueChange={(itemValue, itemIndex) => {setCaseType(itemValue)
-                            dispatch(setIsGermanAC(false))}
+                        onValueChange={(itemValue, itemIndex) => {
+                            setCaseType(itemValue)
+                            dispatch(setIsGermanAC(false))
+                        }
                         }>
                         <Picker.Item color="black" label="Nominative" value="nominative" />
                         <Picker.Item color="black" label="Accusative" value="accusative" />
@@ -121,7 +149,27 @@ const Examples = () => {
                     />
                 </View>
             </View>
-        </View>
+            <View style={{flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <View>
+                </View>
+                <View>
+                    <BannerAd
+                        unitId={TestIds.BANNER}
+                        size={BannerAdSize.SMART_BANNER}
+                        requestOptions={{
+                            requestNonPersonalizedAdsOnly: true,
+                        }}
+                        // Can be used later
+                        // onAdLoaded={() => {
+                        //     console.log('Advert loaded');
+                        // }}
+                        // onAdFailedToLoad={(error) => {
+                        //     console.error('Advert failed to load: ', error);
+                        // }}
+                    />
+                </View>
+            </View>
+        </SafeAreaView>
     )
 }
 
