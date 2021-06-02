@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "708031946482",
+    "project_id": "german-word-endings",
+    "storage_bucket": "german-word-endings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708031946482:android:dab873f49d5a2661187a6b",
+        "android_client_info": {
+          "package_name": "com.germanwordendings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708031946482-bng044t186i003ghtv7p6naa5fe2prnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Nq0ShMfFIgGDAsNMT3SAmcliV1XVly4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708031946482-bng044t186i003ghtv7p6naa5fe2prnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8781477890081427~4182814981"
+    }
+  ],
+  "configuration_version": "1"
+}
