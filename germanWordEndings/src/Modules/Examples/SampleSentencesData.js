@@ -274,8 +274,8 @@ const SampleSentenceGerman = {
         'masculine': {
             'with': {
                 'no': <Text>Ich mag den Geschmack weißen Weins</Text>,
-                'indefinite': <Text>Geld eines guten Mannes fehlt</Text>,
-                'definite': <Text>Geld des guten Mann fehlt</Text>
+                'indefinite': <Text>Das Geld eines guten Mannes fehlt</Text>,
+                'definite': <Text>Das Geld des guten Mannes fehlt</Text>
             },
             'without': {
                 'no': <Text>There is not a word with ending for this combination</Text>,
@@ -286,8 +286,8 @@ const SampleSentenceGerman = {
         'feminine': {
             'with': {
                 'no': <Text>Ich mag den Geschmack gebratener Kartoffel</Text>,
-                'indefinite': <Text>Geld einer guten Frau fehlt</Text>,
-                'definite': <Text>Geld der guten Frau fehlt</Text>
+                'indefinite': <Text>Das Geld einer guten Frau fehlt</Text>,
+                'definite': <Text>Das Geld der guten Frau fehlt</Text>
             },
             'without': {
                 'no': <Text>There is not a word with ending for this combination</Text>,
@@ -298,8 +298,8 @@ const SampleSentenceGerman = {
         'neutral': {
             'with': {
                 'no': <Text>Ich mag den Geruch frischen Brots</Text>,
-                'indefinite': <Text>Geld eines guten Kindes fehlt</Text>,
-                'definite': <Text>Geld des guten Kind fehlt</Text>
+                'indefinite': <Text>Das Geld eines guten Kindes fehlt</Text>,
+                'definite': <Text>Das Geld des guten Kindes fehlt</Text>
             },
             'without': {
                 'no': <Text>There is not a word with ending for this combination</Text>,
