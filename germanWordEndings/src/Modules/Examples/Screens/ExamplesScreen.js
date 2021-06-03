@@ -5,17 +5,31 @@ import Metrics from '../../../StylingConstants/Metrics';
 import Button from '../Component/Button';
 import styles from '../Styles/ExamplesScreenStyle';
 
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { isGermanSelector } from '../../../Redux/LanguageRedux'
 import { setIsGermanAC } from '../../../Redux/LanguageRedux'
-import admob, { MaxAdContentRating, BannerAd, TestIds, AdsConsent, BannerAdSize } from '@react-native-firebase/admob';
+import admob, { MaxAdContentRating, BannerAd, TestIds, AdsConsent, AdsConsentStatus, BannerAdSize } from '@react-native-firebase/admob';
 
 const Examples = () => {
 
-    /*
-  const consentInfo = await AdsConsent.requestInfoUpdate(['pub-6189033257628123']);
-    */
+//Get the consent form once the component mounted if the user is from EEA and initial usage 
+useEffect( async () => {
+    try{
+        const consentInfo = await AdsConsent.requestInfoUpdate(['pub-8781477890081427']); 
+        if(consentInfo.isRequestLocationInEeaOrUnknown && 
+           consentInfo.status === AdsConsentStatus.UNKNOWN){
+               const formResult= await AdsConsent.showForm({
+                   privacyPolicy: "https://invertase.io/privacy-policy",
+                   withPersonalizedAds: true,
+                   withNonPersonalizedAds: true,
+               });
+               console.log("form result", formResult);
+           }
+    }
+    catch (e){
+        console.log("error",e.message )
+    }
+}, [] )
 
     useEffect(() => {
         admob()
