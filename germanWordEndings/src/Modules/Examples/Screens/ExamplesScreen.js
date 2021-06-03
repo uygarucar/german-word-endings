@@ -12,24 +12,24 @@ import admob, { MaxAdContentRating, BannerAd, TestIds, AdsConsent, AdsConsentSta
 
 const Examples = () => {
 
-//Get the consent form once the component mounted if the user is from EEA and initial usage 
-useEffect( async () => {
-    try{
-        const consentInfo = await AdsConsent.requestInfoUpdate(['pub-8781477890081427']); 
-        if(consentInfo.isRequestLocationInEeaOrUnknown && 
-           consentInfo.status === AdsConsentStatus.UNKNOWN){
-               const formResult= await AdsConsent.showForm({
-                   privacyPolicy: "https://invertase.io/privacy-policy",
-                   withPersonalizedAds: true,
-                   withNonPersonalizedAds: true,
-               });
-               console.log("form result", formResult);
-           }
-    }
-    catch (e){
-        console.log("error",e.message )
-    }
-}, [] )
+    //Get the consent form once the component mounted if the user is from EEA and initial usage 
+    useEffect(async () => {
+        try {
+            const consentInfo = await AdsConsent.requestInfoUpdate(['pub-8781477890081427']);
+            if (consentInfo.isRequestLocationInEeaOrUnknown &&
+                consentInfo.status === AdsConsentStatus.UNKNOWN) {
+                const formResult = await AdsConsent.showForm({
+                    privacyPolicy: "https://invertase.io/privacy-policy",
+                    withPersonalizedAds: true,
+                    withNonPersonalizedAds: true,
+                });
+                console.log("form result", formResult);
+            }
+        }
+        catch (e) {
+            console.log("error", e.message)
+        }
+    }, [])
 
     useEffect(() => {
         admob()
@@ -163,25 +163,26 @@ useEffect( async () => {
                     />
                 </View>
             </View>
-            <View style={{flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+            <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                 <View>
                 </View>
                 <View>
                     <BannerAd
-                        unitId={TestIds.BANNER}
+                        unitId="ca-app-pub-8781477890081427/2075472490"
                         size={BannerAdSize.SMART_BANNER}
                         requestOptions={{
                             requestNonPersonalizedAdsOnly: true,
                         }}
-                        // Can be used later
-                        // onAdLoaded={() => {
-                        //     console.log('Advert loaded');
-                        // }}
-                        // onAdFailedToLoad={(error) => {
-                        //     console.error('Advert failed to load: ', error);
-                        // }}
+                    // Can be used later
+                    // onAdLoaded={() => {
+                    //     console.log('Advert loaded');
+                    // }}
+                    // onAdFailedToLoad={(error) => {
+                    //     console.error('Advert failed to load: ', error);
+                    // }}
                     />
                 </View>
+
             </View>
         </SafeAreaView>
     )
