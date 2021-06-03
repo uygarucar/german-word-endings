@@ -38,7 +38,7 @@ const Memorization = () => {
             
             <View>
                 <BannerAd
-                    unitId={TestIds.BANNER}
+                    unitId="ca-app-pub-8781477890081427/9088244033"
                     size={BannerAdSize.SMART_BANNER}
                     requestOptions={{
                         requestNonPersonalizedAdsOnly: true,
@@ -52,6 +52,7 @@ const Memorization = () => {
                 // }}
                 />
             </View>
+            
         </SafeAreaView>
     )
 }
