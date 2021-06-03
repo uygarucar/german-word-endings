@@ -54,9 +54,9 @@ const TablesData = [
                 plural: "guten"
             },
             genitive: {
-                masculine: "guten + s",
+                masculine: "guten + s/es",
                 feminine: "guter",
-                neuter: "guten + s",
+                neuter: "guten + s/es",
                 plural: "guter"
             }
         }
@@ -123,7 +123,7 @@ const TablesData = [
             genitive: {
                 masculine: {
                     article: "des",
-                    adjective: "guten"
+                    adjective: "guten + s/es"
                 },
                 feminine: {
                     article: "der",
@@ -131,7 +131,7 @@ const TablesData = [
                 },
                 neuter: {
                     article: "des",
-                    adjective: "guten"
+                    adjective: "guten + s/es"
                 },
                 plural: {
                     article: "der",
@@ -233,7 +233,7 @@ const TablesData = [
             genitive: {
                 masculine: {
                     article: "eines",
-                    adjective: "guten"
+                    adjective: "guten + s/es"
                 },
                 feminine: {
                     article: "einer",
@@ -241,7 +241,7 @@ const TablesData = [
                 },
                 neuter: {
                     article: "eines",
-                    adjective: "guten"
+                    adjective: "guten + s/es"
                 },
                 plural: {
                     article: "keiner",
