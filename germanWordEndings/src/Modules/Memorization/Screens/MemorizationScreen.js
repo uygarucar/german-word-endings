@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, View, FlatList, SafeAreaView, ScrollView } from 'react-native'
 
+import { useSelector } from 'react-redux'
+import { isPersonalizedAd } from '../../../Redux/AdRedux'
+
 import { DataTable } from 'react-native-paper'
 import Metrics from '../../../StylingConstants/Metrics';
 import VisibilityToggle from '../Component/VisibilityToggle'
@@ -11,7 +14,7 @@ import { BannerAd, TestIds, BannerAdSize } from '@react-native-firebase/admob'
 import TablesData from '../TablesData'
 
 const Memorization = () => {
-
+    const isPersonalized = useSelector(isPersonalizedAd);
     const _renderItem = ({ item }) => {
 
         return (
@@ -24,7 +27,7 @@ const Memorization = () => {
     }
 
 
-
+    console.log("isPersonalized", isPersonalized)
     return (
 
         <SafeAreaView style={{ flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
@@ -38,10 +41,11 @@ const Memorization = () => {
             
             <View>
                 <BannerAd
-                    unitId="ca-app-pub-8781477890081427/9088244033"
+                    //unitId="ca-app-pub-8781477890081427/9088244033"
+                    unitId={TestIds.BANNER}
                     size={BannerAdSize.SMART_BANNER}
                     requestOptions={{
-                        requestNonPersonalizedAdsOnly: true,
+                        requestNonPersonalizedAdsOnly: isPersonalized,
                     }}
                 // Can be used later
                 // onAdLoaded={() => {

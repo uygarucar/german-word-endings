@@ -8,10 +8,14 @@ import styles from '../Styles/ExamplesScreenStyle';
 import { useSelector, useDispatch } from 'react-redux'
 import { isGermanSelector } from '../../../Redux/LanguageRedux'
 import { setIsGermanAC } from '../../../Redux/LanguageRedux'
+
+import { isPersonalizedAd } from '../../../Redux/AdRedux'
+import { setAdType } from '../../../Redux/AdRedux'
+
 import admob, { MaxAdContentRating, BannerAd, TestIds, AdsConsent, AdsConsentStatus, BannerAdSize } from '@react-native-firebase/admob';
 
 const Examples = () => {
-
+    const dispatch = useDispatch();
     //Get the consent form once the component mounted if the user is from EEA and initial usage 
     useEffect(async () => {
         try {
@@ -24,12 +28,18 @@ const Examples = () => {
                     withNonPersonalizedAds: true,
                 });
                 console.log("form result", formResult);
+                if(formResult.status == 2)
+                {dispatch(setAdType(true))}
+                else
+                {dispatch(setAdType(false))}
             }
         }
         catch (e) {
             console.log("error", e.message)
         }
     }, [])
+    
+    
 
     useEffect(() => {
         admob()
@@ -49,8 +59,11 @@ const Examples = () => {
             })
     }, [])
 
-    const dispatch = useDispatch();
+    
     const isGerman = useSelector(isGermanSelector);
+
+    const isPersonalized = useSelector(isPersonalizedAd);
+    console.log("isPersonalized", isPersonalized)
 
     const [articleType, setArticleType] = useState('no');
     const [hasAdjective, setHasAdjective] = useState('with');
@@ -168,10 +181,11 @@ const Examples = () => {
                 </View>
                 <View>
                     <BannerAd
-                        unitId="ca-app-pub-8781477890081427/2075472490"
+                        //unitId="ca-app-pub-8781477890081427/2075472490" 
+                        unitId= {TestIds.BANNER}
                         size={BannerAdSize.SMART_BANNER}
                         requestOptions={{
-                            requestNonPersonalizedAdsOnly: true,
+                            requestNonPersonalizedAdsOnly: isPersonalized,
                         }}
                     // Can be used later
                     // onAdLoaded={() => {
