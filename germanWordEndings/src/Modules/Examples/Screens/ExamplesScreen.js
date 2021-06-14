@@ -9,6 +9,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { isGermanSelector } from '../../../Redux/LanguageRedux'
 import { setIsGermanAC } from '../../../Redux/LanguageRedux'
 
+import { setArticleAC } from '../../../Redux/ArticleRedux'
+import { articleSelector } from '../../../Redux/ArticleRedux';
+
+import { setAdjectiveAC } from '../../../Redux/AdjectiveRedux'
+import { adjectiveSelector } from '../../../Redux/AdjectiveRedux';
+
+import { setNounGenderAC } from '../../../Redux/NounRedux'
+import { nounSelector } from '../../../Redux/NounRedux';
+
+import { setCaseAC } from '../../../Redux/CaseRedux'
+import { caseSelector } from '../../../Redux/CaseRedux';
+
 import { isPersonalizedAd } from '../../../Redux/AdRedux'
 import { setAdType } from '../../../Redux/AdRedux'
 
@@ -61,15 +73,19 @@ const Examples = () => {
 
     
     const isGerman = useSelector(isGermanSelector);
-
+    const articleType= useSelector(articleSelector);
+    const hasAdjective = useSelector(adjectiveSelector);
+    const nounGenderType = useSelector(nounSelector);
+    const caseType = useSelector(caseSelector);
     const isPersonalized = useSelector(isPersonalizedAd);
-    console.log("isPersonalized", isPersonalized)
+    //console.log("isPersonalized", isPersonalized)
 
-    const [articleType, setArticleType] = useState('no');
-    const [hasAdjective, setHasAdjective] = useState('with');
-    const [nounGenderType, setNounGenderType] = useState('masculine');
-    const [caseType, setCaseType] = useState('accusative');
-
+    //Convert into Redux
+    //const [articleType, setArticleType] = useState('no');
+    //const [hasAdjective, setHasAdjective] = useState('with');
+    //const [nounGenderType, setNounGenderType] = useState('masculine');
+    //const [caseType, setCaseType] = useState('accusative');
+    
     return (
 
         <SafeAreaView style={styles.container}>
@@ -84,7 +100,7 @@ const Examples = () => {
                         selectedValue={articleType}
                         mode="dropdown"
                         onValueChange={(itemValue, itemIndex) => {
-                            setArticleType(itemValue);
+                            dispatch(setArticleAC(itemValue));
                             dispatch(setIsGermanAC(false));
                         }
                         }
@@ -109,7 +125,7 @@ const Examples = () => {
                         selectedValue={hasAdjective}
                         mode="dropdown"
                         onValueChange={(itemValue, itemIndex) => {
-                            setHasAdjective(itemValue);
+                            dispatch(setAdjectiveAC(itemValue))
                             dispatch(setIsGermanAC(false))
                         }}>
                         <Picker.Item color="black" label="with" value="with" />
@@ -132,7 +148,7 @@ const Examples = () => {
                         mode='dropdown'
                         selectedValue={nounGenderType}
                         onValueChange={(itemValue, itemIndex) => {
-                            setNounGenderType(itemValue)
+                            dispatch(setNounGenderAC(itemValue))
                             dispatch(setIsGermanAC(false))
                         }}
                     >
@@ -154,7 +170,7 @@ const Examples = () => {
                         selectedValue={caseType}
                         mode="dropdown"
                         onValueChange={(itemValue, itemIndex) => {
-                            setCaseType(itemValue)
+                            dispatch(setCaseAC(itemValue))
                             dispatch(setIsGermanAC(false))
                         }
                         }>
@@ -180,9 +196,9 @@ const Examples = () => {
                 <View>
                 </View>
                 <View>
-                    <BannerAd
-                        unitId="ca-app-pub-8781477890081427/2075472490" 
-                        //unitId= {TestIds.BANNER}
+                    {/* <BannerAd
+                        //unitId="ca-app-pub-8781477890081427/2075472490" 
+                        unitId= {TestIds.BANNER}
                         size={BannerAdSize.SMART_BANNER}
                         requestOptions={{
                             requestNonPersonalizedAdsOnly: isPersonalized,
@@ -194,7 +210,7 @@ const Examples = () => {
                     // onAdFailedToLoad={(error) => {
                     //     console.error('Advert failed to load: ', error);
                     // }}
-                    />
+                    /> */}
                 </View>
 
             </View>
