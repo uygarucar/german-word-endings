@@ -1,11 +1,20 @@
 import React from 'react'
 import { Text } from 'react-native'
+import {DeliverAnimatedColor} from './Styles/SampleSentencesStyle'
+
 const SampleSentenceEnglish = {
     'nominative': {
         'masculine': {
             'with': {
                 'no': <Text>Yellowish cheese is popular among many people</Text>,
-                'indefinite': <Text>A good man was looking for you</Text>,
+                'indefinite': <Text>
+                                <Text>A </Text>
+                                <Text>good </Text>
+                                <Text>man </Text>
+                                <Text>was </Text>
+                                <Text>looking for </Text>
+                                <Text>you</Text>
+                              </Text>,
                 'definite': <Text>The good man was looking for you</Text>
             },
             'without': {
