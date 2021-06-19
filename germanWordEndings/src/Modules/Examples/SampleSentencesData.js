@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text } from 'react-native'
-import {DeliverAnimatedColor} from './Styles/SampleSentencesStyle'
 
 const SampleSentenceEnglish = {
     'nominative': {
