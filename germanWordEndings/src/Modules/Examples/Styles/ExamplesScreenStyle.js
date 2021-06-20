@@ -116,12 +116,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: Metrics.width * 0.01,
         borderRadius: Metrics.width * 0.02,
         width: Metrics.width * 1,
-        height: Metrics.height * 0.07,
+        height: Metrics.height * 0.1,
 
      },
      innerButtonContainer:{
          backgroundColor: '#EBEBEB',
          flex:1,
+         
      },
     
      //Sample sentence text
