@@ -44,7 +44,7 @@ const TextColorAnimation = (props) => {
         }
         else
         {
-            dispatch(setYellowTextAC('grey'))
+            dispatch(setYellowTextAC('rgb(105,105,105)'))
         }
         if(countYellow){
             let yellowToBlack = Animated.timing(
@@ -79,7 +79,7 @@ const TextColorAnimation = (props) => {
         }
         else
         {
-            dispatch(setPinkTextAC('grey'))
+            dispatch(setPinkTextAC('rgb(105,105,105)'))
         }
         if(countPink){
             let pinkToBlack = Animated.timing(
@@ -114,7 +114,7 @@ const TextColorAnimation = (props) => {
         }
         else
         {
-            dispatch(setGreenTextAC('grey'))
+            dispatch(setGreenTextAC('rgb(105,105,105)'))
         }
         if(countGreen){
             let greenToBlack = Animated.timing(
@@ -148,7 +148,7 @@ const TextColorAnimation = (props) => {
         }
         else
         {
-            dispatch(setOrangeTextAC('grey'))
+            dispatch(setOrangeTextAC('rgb(105,105,105)'))
         }
         if(countOrange){
             let orangeToBlack = Animated.timing(

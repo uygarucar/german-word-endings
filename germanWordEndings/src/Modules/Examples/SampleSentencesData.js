@@ -1,8 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Text, TouchableOpacity, View, Animated } from 'react-native'
+import { useDispatch } from 'react-redux'
 
+import { setYellowTextAC } from '../../Redux/YellowTextRedux'
+import { setGreenTextAC } from '../../Redux/GreenTextRedux'
+import { setPinkTextAC } from '../../Redux/PinkTextRedux'
+import { setOrangeTextAC } from '../../Redux/OrangeTextRedux'
 const SampleSentences = (props) => {
-
+const dispatch = useDispatch()
     const EnglishSamples = {
         'nominative': {
             'masculine': {
@@ -33,31 +38,68 @@ const SampleSentences = (props) => {
                         <Animated.Text style={props.yellowStyle}>A </Animated.Text> 
                         <Animated.Text style={props.greenStyle}>man </Animated.Text> 
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>,
-                    'definite': <Text>The man was looking for you</Text>
+                    'definite': <Text>
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text> 
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text> <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>Sweet sauce is popular among many people</Text>,
-                    'indefinite': <Text>A good woman was looking for you</Text>,
-                    'definite': <Text>The good woman was looking for you</Text>
+                    'no': <Text>
+                        <Animated.Text style={props.pinkStyle}>Sweet </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>sauce </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>is </Animated.Text>popular among many people</Text>,
+                    'indefinite': <Text>
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text> <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>,
+                    'definite': <Text>
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text> 
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>A woman was looking for you</Text>,
-                    'definite': <Text>The woman was looking for you</Text>
+                    'indefinite': <Text>
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>,
+                    'definite': <Text>
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>Warm ice cream is not appealing to me</Text>,
-                    'indefinite': <Text>A good child was looking for you</Text>,
-                    'definite': <Text>The good child was looking for you</Text>
+                    'no': <Text>
+                        <Animated.Text style={props.pinkStyle}>Warm </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>ice cream </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>is </Animated.Text>not appealing to me</Text>,
+                    'indefinite': <Text>
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>,
+                    'definite': <Text>
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>
+                            looking for you</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>A child was looking for you</Text>,
-                    'definite': <Text>The child was looking for you</Text>
+                    'indefinite': <Text>
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>
+                          looking for you</Text>,
+                    'definite': <Text>
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>
                 }
             }
         },
@@ -341,6 +383,16 @@ const SampleSentences = (props) => {
     {EnglishSamples[props.caseType][props.nounGenderType][props.hasAdjective][props.articleType]}
     </Text>
 
+    //Remaining of the color when switching language fixed
+    useEffect(()=> {
+        if(props.isGerman){
+            dispatch(setYellowTextAC('rgb(105,105,105)'));
+            dispatch(setGreenTextAC('rgb(105,105,105)'));
+            dispatch(setPinkTextAC('rgb(105,105,105)'));
+            dispatch(setOrangeTextAC('rgb(105,105,105)'));
+        }
+    }, [props.isGerman])
+    
     return (
         <TouchableOpacity onPress={props.onPress_FlipCard} style={[props.styleButton, {flex:1}]}>
 
