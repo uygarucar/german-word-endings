@@ -5,6 +5,7 @@ import { articleReducer } from './ArticleRedux'
 import { adjectiveReducer } from './AdjectiveRedux'
 import { nounReducer } from './NounRedux'
 import { caseReducer } from './CaseRedux'
+import { yellowTextReducer } from './YellowTextRedux'
 
 const rootReducer =combineReducers({
     languageState: languageReducer,
@@ -12,7 +13,8 @@ const rootReducer =combineReducers({
     articleState: articleReducer,
     adjectiveState: adjectiveReducer,
     nounState: nounReducer,
-    caseState: caseReducer
+    caseState: caseReducer,
+    yellowTextState: yellowTextReducer
 }) 
 
 export const store = createStore(rootReducer);

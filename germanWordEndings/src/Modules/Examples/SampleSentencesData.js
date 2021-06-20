@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View, Animated } from 'react-native'
 
 const SampleSentences = (props) => {
 
@@ -9,7 +9,7 @@ const SampleSentences = (props) => {
                 'with': {
                     'no': <Text>Yellowish cheese is popular among many people</Text>,
                     'indefinite': <Text>
-                        <Text>A </Text>
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text>
                         <Text>good </Text>
                         <Text>man </Text>
                         <Text>was </Text>
