@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Text, TouchableOpacity, View, Animated } from 'react-native'
 import { useDispatch } from 'react-redux'
 
@@ -6,17 +6,18 @@ import { setYellowTextAC } from '../../Redux/YellowTextRedux'
 import { setGreenTextAC } from '../../Redux/GreenTextRedux'
 import { setPinkTextAC } from '../../Redux/PinkTextRedux'
 import { setOrangeTextAC } from '../../Redux/OrangeTextRedux'
+
 const SampleSentences = (props) => {
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const EnglishSamples = {
         'nominative': {
             'masculine': {
                 'with': {
                     'no': <Text>
-                            <Animated.Text style={props.pinkStyle}>Yellowish </Animated.Text>
-                            <Animated.Text style={props.greenStyle}>cheese </Animated.Text>
-                            <Animated.Text style={props.orangeStyle}>is </Animated.Text>
-                            popular among many people</Text>,
+                        <Animated.Text style={props.pinkStyle}>Yellowish </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>cheese </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>is </Animated.Text>
+                        popular among many people</Text>,
                     'indefinite': <Text>
                         <Animated.Text style={props.yellowStyle}>A </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
@@ -26,20 +27,20 @@ const dispatch = useDispatch()
                         <Text>you</Text>
                     </Text>,
                     'definite': <Text>
-                        <Animated.Text style={props.yellowStyle}>The </Animated.Text> 
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you
-                        </Text>
+                    </Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>
-                        <Animated.Text style={props.yellowStyle}>A </Animated.Text> 
-                        <Animated.Text style={props.greenStyle}>man </Animated.Text> 
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>,
                     'definite': <Text>
-                        <Animated.Text style={props.yellowStyle}>The </Animated.Text> 
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text> <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>
                 }
             },
@@ -54,7 +55,7 @@ const dispatch = useDispatch()
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>,
                     'definite': <Text>
-                        <Animated.Text style={props.yellowStyle}>The </Animated.Text> 
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>
@@ -87,7 +88,7 @@ const dispatch = useDispatch()
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text>
-                            looking for you</Text>
+                        looking for you</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
@@ -95,7 +96,7 @@ const dispatch = useDispatch()
                         <Animated.Text style={props.yellowStyle}>A </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text>
-                          looking for you</Text>,
+                        looking for you</Text>,
                     'definite': <Text>
                         <Animated.Text style={props.yellowStyle}>The </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
@@ -106,114 +107,295 @@ const dispatch = useDispatch()
         'accusative': {
             'masculine': {
                 'with': {//there is adj.
-                    'no': <Text>He eats red apple</Text>,//No article
-                    'indefinite': <Text>I've seen a good man</Text>, //indefinite article
-                    'definite': <Text>I've seen the good man</Text>//definite article
+                    'no': <Text>He eats
+                        <Animated.Text style={props.pinkStyle}>red </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>apple </Animated.Text></Text>,//No article
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text></Text>, //indefinite article
+                    'definite': <Text>
+                        I've <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text></Text>//definite article
                 },
                 'without': {//no adj.
                     'no': <Text>There is not a word with ending for this combination</Text>, // No article
-                    'indefinite': <Text>I've seen a man</Text>, //indefinite article
-                    'definite': <Text>I've seen the man</Text> //definite article
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man</Animated.Text> </Text>, //indefinite article
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                    </Text> //definite article
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>He eats fried potato</Text>,
-                    'indefinite': <Text>I've seen a good woman</Text>,
-                    'definite': <Text>I've seen the good woman</Text>
+                    'no': <Text>He
+                        <Animated.Text style={props.orangeStyle}>eats </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>fried </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>potato</Animated.Text></Text>,
+                    'indefinite': <Text>
+                        I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>I've seen a woman</Text>,
-                    'definite': <Text>I've seen the woman</Text>
+                    'indefinite': <Text>
+                        I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>He eats fresh bread</Text>,
-                    'indefinite': <Text>I've seen a good child</Text>,
-                    'definite': <Text>I've seen the good child</Text>
+                    'no': <Text>He
+                        <Animated.Text style={props.orangeStyle}>eats </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>fresh </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>bread </Animated.Text></Text>,
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                    </Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>I've seen a child</Text>,
-                    'definite': <Text>I've seen the child</Text>
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                    </Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>
                 }
             }
         },
         'dative': {
             'masculine': {
                 'with': {
-                    'no': <Text>Pizza tastes best with red wine</Text>,
-                    'indefinite': <Text>I've helped a good man</Text>,
-                    'definite': <Text>I've helped the good man</Text>
+                    'no': <Text>Pizza tastes best
+                        <Animated.Text style={props.orangeStyle}>with </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>red </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>wine </Animated.Text>
+                    </Text>,
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                    </Text>,
+                    'definite': <Text>
+                        I've <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                    </Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>I've helped a man</Text>,
-                    'definite': <Text>I've helped the man</Text>
+                    'indefinite': <Text>
+                        I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man</Animated.Text>
+                    </Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text></Text>
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>Beer tastes best with fried potato</Text>,
-                    'indefinite': <Text>I've helped a good woman</Text>,
-                    'definite': <Text>I've helped the good woman</Text>
+                    'no': <Text>Beer tastes best
+                        <Animated.Text style={props.orangeStyle}>with </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>fried </Animated.Text>potato</Text>,
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                    </Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                    </Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>I've helped a woman</Text>,
-                    'definite': <Text>I've helped the woman</Text>
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                    </Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                    </Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>Cheese tastes best with fresh bread</Text>,
-                    'indefinite': <Text>I've helped a good child</Text>,
-                    'definite': <Text>I've helped the good child</Text>
+                    'no': <Text>Cheese tastes best
+                        <Animated.Text style={props.orangeStyle}>with </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>fresh </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>bread </Animated.Text>
+                    </Text>,
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                    </Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>I've helped a child</Text>,
-                    'definite': <Text>I've helped the child</Text>
+                    'indefinite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>,
+                    'definite': <Text>I've
+                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                    </Text>
                 }
             }
         },
         'genitive': {
             'masculine': {
                 'with': {
-                    'no': <Text>I like the taste of white wine</Text>,
-                    'indefinite': <Text>Money of a good man is missing</Text>,
-                    'definite': <Text>Money of the good man is missing</Text>
+                    'no': <Text>I like the taste
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>white </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>wine </Animated.Text>
+                    </Text>,
+                    'indefinite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                        is missing</Text>,
+                    'definite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                        is missing</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Money of a man is missing</Text>,
-                    'definite': <Text>Money of the man is missing</Text>
+                    'indefinite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                        is missing</Text>,
+                    'definite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                        is missing</Text>
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>I like the taste of fried potato</Text>,
-                    'indefinite': <Text>Money of a good woman is missing</Text>,
-                    'definite': <Text>Money of the good woman is missing</Text>
+                    'no': <Text>I like the taste
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>fried </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>potato </Animated.Text>
+                    </Text>,
+                    'indefinite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        is missing</Text>,
+                    'definite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>is missing</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Money of a woman is missing</Text>,
-                    'definite': <Text>Money of the woman is missing</Text>
+                    'indefinite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        is missing</Text>,
+                    'definite': <Text>Money
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>woman </Animated.Text>
+                        is missing</Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>I like the smell of fresh bread</Text>,
-                    'indefinite': <Text>Money of a good child is missing</Text>,
-                    'definite': <Text>Money of the good child is missing</Text>
+                    'no': <Text>I like the smell 
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>fresh </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>bread </Animated.Text>
+                        </Text>,
+                    'indefinite': <Text>Money 
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        is missing</Text>,
+                    'definite': <Text>Money 
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>is missing</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Money of a child is missing</Text>,
-                    'definite': <Text>Money of the child is missing</Text>
+                    'indefinite': <Text>Money 
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>a </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        is missing</Text>,
+                    'definite': <Text>Money 
+                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>the </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>child </Animated.Text>
+                        is missing</Text>
                 }
             }
         }
@@ -373,28 +555,28 @@ const dispatch = useDispatch()
             }
         }
     }
-    const sentenceToDisplay = props.isGerman 
-    ? 
-    <Text style={[props.styleSamplesFontSize, {flex:1, textAlignVertical:'center'}]}>
-    {GermanSamples[props.caseType][props.nounGenderType][props.hasAdjective][props.articleType]}
-    </Text>
-    :
-    <Text style={props.styleSamplesFontSize}>
-    {EnglishSamples[props.caseType][props.nounGenderType][props.hasAdjective][props.articleType]}
-    </Text>
+    const sentenceToDisplay = props.isGerman
+        ?
+        <Text style={[props.styleSamplesFontSize, { flex: 1, textAlignVertical: 'center' }]}>
+            {GermanSamples[props.caseType][props.nounGenderType][props.hasAdjective][props.articleType]}
+        </Text>
+        :
+        <Text style={props.styleSamplesFontSize}>
+            {EnglishSamples[props.caseType][props.nounGenderType][props.hasAdjective][props.articleType]}
+        </Text>
 
     //Remaining of the color when switching language fixed
-    useEffect(()=> {
-        if(props.isGerman){
+    useEffect(() => {
+        if (props.isGerman) {
             dispatch(setYellowTextAC('rgb(105,105,105)'));
             dispatch(setGreenTextAC('rgb(105,105,105)'));
             dispatch(setPinkTextAC('rgb(105,105,105)'));
             dispatch(setOrangeTextAC('rgb(105,105,105)'));
         }
     }, [props.isGerman])
-    
+
     return (
-        <TouchableOpacity onPress={props.onPress_FlipCard} style={[props.styleButton, {flex:1}]}>
+        <TouchableOpacity onPress={props.onPress_FlipCard} style={[props.styleButton, { flex: 1 }]}>
 
             {!props.isGerman ? <Text style={props.styleClickMessage}>Click to see in German</Text> : null}
             {sentenceToDisplay}
