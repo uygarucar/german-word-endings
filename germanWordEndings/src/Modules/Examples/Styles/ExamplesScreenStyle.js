@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
      articleBox: {
          flex: 0.8,
          borderWidth: 1,
-         backgroundColor: '#E7F194',
+         backgroundColor: 'rgb(243, 249, 190)',//#E7F194
          borderRadius: Metrics.width * 0.02,
          
      },
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
      },
      adjectiveBox:{
          flex: 0.45,
-         backgroundColor: '#FFD6F7',
+         backgroundColor: '#FFD6F7', //rgb(255, 230, 250)
          borderWidth: 1,
          borderColor: 'black',
          alignContent: 'center',
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
          borderWidth: 1,
          alignContent: 'center',
          flex: 0.55,
-         backgroundColor: '#BBFFBF',
+         backgroundColor: 'rgb(203, 252, 206)',//#BBFFBF
          borderRadius: Metrics.width * 0.02,
      },
      textAfterNounGender:{
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
      },
      caseBox:{
          flex: 0.45,
-         backgroundColor: '#FFB778',
+         backgroundColor: 'rgb(255, 221, 191)',
          borderWidth: 1,
          borderRadius: Metrics.width * 0.02,
      },

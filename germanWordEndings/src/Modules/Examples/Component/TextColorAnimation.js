@@ -51,7 +51,7 @@ const TextColorAnimation = (props) => {
                 yellowText,
                 {
                     toValue: 1,
-                    duration: 4000,
+                    duration: 2500,
                     useNativeDriver: false
                 }
             );
@@ -86,7 +86,7 @@ const TextColorAnimation = (props) => {
                 pinkText,
                 {
                     toValue: 1,
-                    duration: 4000,
+                    duration: 2500,
                     useNativeDriver: false
                 }
             );
@@ -121,7 +121,7 @@ const TextColorAnimation = (props) => {
                 greenText,
                 {
                     toValue: 1,
-                    duration: 4000,
+                    duration: 2500,
                     useNativeDriver: false
                 }
             );
@@ -155,7 +155,7 @@ const TextColorAnimation = (props) => {
                 orangeText,
                 {
                     toValue: 1,
-                    duration: 4000,
+                    duration: 2500,
                     useNativeDriver: false
                 }
             );

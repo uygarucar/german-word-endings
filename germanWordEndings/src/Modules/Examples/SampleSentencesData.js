@@ -108,7 +108,7 @@ const SampleSentences = (props) => {
             'masculine': {
                 'with': {//there is adj.
                     'no': <Text>He eats
-                        <Animated.Text style={props.pinkStyle}>red </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}> red </Animated.Text>
                         <Animated.Text style={props.greenStyle}>apple </Animated.Text></Text>,//No article
                     'indefinite': <Text>I've
                         <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
