@@ -7,20 +7,32 @@ const SampleSentences = (props) => {
         'nominative': {
             'masculine': {
                 'with': {
-                    'no': <Text>Yellowish cheese is popular among many people</Text>,
+                    'no': <Text>
+                            <Animated.Text style={props.pinkStyle}>Yellowish </Animated.Text>
+                            <Animated.Text style={props.greenStyle}>cheese </Animated.Text>
+                            <Animated.Text style={props.orangeStyle}>is </Animated.Text>
+                            popular among many people</Text>,
                     'indefinite': <Text>
                         <Animated.Text style={props.yellowStyle}>A </Animated.Text>
-                        <Text>good </Text>
-                        <Text>man </Text>
-                        <Text>was </Text>
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>
                         <Text>looking for </Text>
                         <Text>you</Text>
                     </Text>,
-                    'definite': <Text>The good man was looking for you</Text>
+                    'definite': <Text>
+                        <Animated.Text style={props.yellowStyle}>The </Animated.Text> 
+                        <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you
+                        </Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>A man was looking for you</Text>,
+                    'indefinite': <Text>
+                        <Animated.Text style={props.yellowStyle}>A </Animated.Text> 
+                        <Animated.Text style={props.greenStyle}>man </Animated.Text> 
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>,
                     'definite': <Text>The man was looking for you</Text>
                 }
             },
