@@ -8,6 +8,10 @@ import { setPinkTextAC } from '../../Redux/PinkTextRedux'
 import { setOrangeTextAC } from '../../Redux/OrangeTextRedux'
 
 const SampleSentences = (props) => {
+    const black={
+        color: 'black'
+    }
+
     const dispatch = useDispatch()
     const EnglishSamples = {
         'nominative': {
@@ -30,7 +34,7 @@ const SampleSentences = (props) => {
                         <Animated.Text style={props.yellowStyle}>The </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
-                        <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you
                     </Text>
                 },
                 'without': {
@@ -38,10 +42,10 @@ const SampleSentences = (props) => {
                     'indefinite': <Text>
                         <Animated.Text style={props.yellowStyle}>A </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
-                        <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>,
+                        <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>,
                     'definite': <Text>
                         <Animated.Text style={props.yellowStyle}>The </Animated.Text>
-                        <Animated.Text style={props.greenStyle}>man </Animated.Text> <Animated.Text style={props.orangeStyle}>was </Animated.Text> looking for you</Text>
+                        <Animated.Text style={props.greenStyle}>man</Animated.Text> <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>
                 }
             },
             'feminine': {
@@ -51,7 +55,7 @@ const SampleSentences = (props) => {
                         <Animated.Text style={props.greenStyle}>sauce </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>is </Animated.Text>popular among many people</Text>,
                     'indefinite': <Text>
-                        <Animated.Text style={props.yellowStyle}>A </Animated.Text> <Animated.Text style={props.pinkStyle}>good </Animated.Text>
+                        <Animated.Text style={props.yellowStyle}>A</Animated.Text> <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                         <Animated.Text style={props.orangeStyle}>was </Animated.Text>looking for you</Text>,
                     'definite': <Text>
@@ -107,11 +111,12 @@ const SampleSentences = (props) => {
         'accusative': {
             'masculine': {
                 'with': {//there is adj.
-                    'no': <Text>He eats
-                        <Animated.Text style={props.pinkStyle}> red </Animated.Text>
+                    'no': <Text>He 
+                        <Animated.Text style={props.orangeStyle}> eats </Animated.Text>
+                        <Animated.Text style={props.pinkStyle}>red </Animated.Text>
                         <Animated.Text style={props.greenStyle}>apple </Animated.Text></Text>,//No article
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text></Text>, //indefinite article
@@ -124,11 +129,11 @@ const SampleSentences = (props) => {
                 'without': {//no adj.
                     'no': <Text>There is not a word with ending for this combination</Text>, // No article
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man</Animated.Text> </Text>, //indefinite article
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
                     </Text> //definite article
@@ -137,17 +142,17 @@ const SampleSentences = (props) => {
             'feminine': {
                 'with': {
                     'no': <Text>He
-                        <Animated.Text style={props.orangeStyle}>eats </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> eats </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>fried </Animated.Text>
                         <Animated.Text style={props.greenStyle}>potato</Animated.Text></Text>,
                     'indefinite': <Text>
                         I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>
@@ -156,11 +161,11 @@ const SampleSentences = (props) => {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>
                         I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text></Text>
                 }
@@ -168,17 +173,17 @@ const SampleSentences = (props) => {
             'neutral': {
                 'with': {
                     'no': <Text>He
-                        <Animated.Text style={props.orangeStyle}>eats </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> eats </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>fresh </Animated.Text>
                         <Animated.Text style={props.greenStyle}>bread </Animated.Text></Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                     </Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>
@@ -186,12 +191,12 @@ const SampleSentences = (props) => {
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                     </Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>seen </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> seen </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>
                 }
@@ -201,12 +206,12 @@ const SampleSentences = (props) => {
             'masculine': {
                 'with': {
                     'no': <Text>Pizza tastes best
-                        <Animated.Text style={props.orangeStyle}>with </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> with </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>red </Animated.Text>
                         <Animated.Text style={props.greenStyle}>wine </Animated.Text>
                     </Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
@@ -222,12 +227,12 @@ const SampleSentences = (props) => {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>
                         I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man</Animated.Text>
                     </Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text></Text>
                 }
@@ -235,16 +240,16 @@ const SampleSentences = (props) => {
             'feminine': {
                 'with': {
                     'no': <Text>Beer tastes best
-                        <Animated.Text style={props.orangeStyle}>with </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> with </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>fried </Animated.Text>potato</Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                     </Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
@@ -253,12 +258,12 @@ const SampleSentences = (props) => {
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                     </Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                     </Text>
@@ -267,18 +272,18 @@ const SampleSentences = (props) => {
             'neutral': {
                 'with': {
                     'no': <Text>Cheese tastes best
-                        <Animated.Text style={props.orangeStyle}>with </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> with </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>fresh </Animated.Text>
                         <Animated.Text style={props.greenStyle}>bread </Animated.Text>
                     </Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                     </Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>
@@ -286,11 +291,11 @@ const SampleSentences = (props) => {
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text></Text>,
                     'definite': <Text>I've
-                        <Animated.Text style={props.orangeStyle}>helped </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                     </Text>
@@ -301,18 +306,18 @@ const SampleSentences = (props) => {
             'masculine': {
                 'with': {
                     'no': <Text>I like the taste
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>white </Animated.Text>
                         <Animated.Text style={props.greenStyle}>wine </Animated.Text>
                     </Text>,
                     'indefinite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
                         is missing</Text>,
                     'definite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
@@ -321,12 +326,12 @@ const SampleSentences = (props) => {
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
                         is missing</Text>,
                     'definite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>man </Animated.Text>
                         is missing</Text>
@@ -335,18 +340,18 @@ const SampleSentences = (props) => {
             'feminine': {
                 'with': {
                     'no': <Text>I like the taste
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>fried </Animated.Text>
                         <Animated.Text style={props.greenStyle}>potato </Animated.Text>
                     </Text>,
                     'indefinite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                         is missing</Text>,
                     'definite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>is missing</Text>
@@ -354,12 +359,12 @@ const SampleSentences = (props) => {
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                         is missing</Text>,
                     'definite': <Text>Money
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>woman </Animated.Text>
                         is missing</Text>
@@ -368,18 +373,18 @@ const SampleSentences = (props) => {
             'neutral': {
                 'with': {
                     'no': <Text>I like the smell 
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>fresh </Animated.Text>
                         <Animated.Text style={props.greenStyle}>bread </Animated.Text>
                         </Text>,
                     'indefinite': <Text>Money 
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                         is missing</Text>,
                     'definite': <Text>Money 
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.pinkStyle}>good </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>is missing</Text>
@@ -387,12 +392,12 @@ const SampleSentences = (props) => {
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>Money 
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                         is missing</Text>,
                     'definite': <Text>Money 
-                        <Animated.Text style={props.orangeStyle}>of </Animated.Text>
+                        <Animated.Text style={props.orangeStyle}> of </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>the </Animated.Text>
                         <Animated.Text style={props.greenStyle}>child </Animated.Text>
                         is missing</Text>
@@ -405,152 +410,152 @@ const SampleSentences = (props) => {
         'nominative': {
             'masculine': {
                 'with': {
-                    'no': <Text>Gelblicher Käse ist bei vielen Menschen beliebt</Text>,
-                    'indefinite': <Text>Ein guter Mann hat dich gesucht</Text>,
-                    'definite': <Text>Der gute Mann hat dich gesucht</Text>
+                    'no': <Text>Gelblich<Text style={black}>er</Text> Käse ist bei vielen Menschen beliebt</Text>,
+                    'indefinite': <Text>Ein gut<Text style={black}>er</Text> Mann hat dich gesucht</Text>,
+                    'definite': <Text><Text style={black}>Der</Text> gut<Text style={black}>e</Text> Mann hat dich gesucht</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>Ein Mann hat dich gesucht</Text>,
-                    'definite': <Text>Der Mann hat dich gesucht</Text>
+                    'definite': <Text><Text style={black}>Der</Text> Mann hat dich gesucht</Text>
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>Süße Sauce ist bei vielen Menschen beliebt.</Text>,
-                    'indefinite': <Text>Eine gute Frau hat dich gesucht</Text>,
-                    'definite': <Text>Die gute Frau hat dich gesucht</Text>
+                    'no': <Text>Süß<Text style={black}>e</Text> Sauce ist bei vielen Menschen beliebt.</Text>,
+                    'indefinite': <Text>Ein<Text style={black}>e</Text> gut<Text style={black}>e</Text> Frau hat dich gesucht</Text>,
+                    'definite': <Text><Text style={black}>Die</Text> gut<Text style={black}>e</Text> Frau hat dich gesucht</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Eine Frau hat dich gesucht</Text>,
-                    'definite': <Text>Die Frau hat dich gesucht</Text>
+                    'indefinite': <Text>Ein<Text style={black}>e</Text> Frau hat dich gesucht</Text>,
+                    'definite': <Text><Text style={black}>Die</Text> Frau hat dich gesucht</Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>Warmes Eis gefällt mir nicht</Text>,
-                    'indefinite': <Text>Ein gutes Kind hat dich gesucht</Text>,
-                    'definite': <Text>Das gute Kind hat dich gesucht</Text>
+                    'no': <Text>Warm<Text style={black}>es</Text> Eis gefällt mir nicht</Text>,
+                    'indefinite': <Text>Ein gut<Text style={black}>es</Text> Kind hat dich gesucht</Text>,
+                    'definite': <Text><Text style={black}>Das</Text> gut<Text style={black}>e</Text> Kind hat dich gesucht</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>Ein Kind hat dich gesucht</Text>,
-                    'definite': <Text>Das Kind hat dich gesucht</Text>
+                    'definite': <Text><Text style={black}>Das</Text> Kind hat dich gesucht</Text>
                 }
             }
         },
         'accusative': {
             'masculine': {
                 'with': {//there is adj.
-                    'no': <Text>Er isst roten Apfel</Text>,//No article
-                    'indefinite': <Text>Ich habe einen guten Mann gesehen</Text>,//indefinite article
-                    'definite': <Text>Ich habe den guten Mann gesehen</Text>//definite article
+                    'no': <Text>Er isst rot<Text style={black}>en</Text> Apfel</Text>,//No article
+                    'indefinite': <Text>Ich habe ein<Text style={black}>en</Text> gut<Text style={black}>en</Text> Mann gesehen</Text>,//indefinite article
+                    'definite': <Text>Ich habe <Text style={black}>den</Text> gut<Text style={black}>en</Text> Mann gesehen</Text>//definite article
                 },
                 'without': {//no adj.
                     'no': <Text>There is not a word with ending for this combination</Text>, // No article
-                    'indefinite': <Text>Ich habe einen Mann gesehen</Text>, //indefinite article
+                    'indefinite': <Text>Ich habe ein<Text style={black}>en</Text> Mann gesehen</Text>, //indefinite article
                     'definite': <Text>Ich habe den Mann gesehen</Text> //definite article
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>Er isst gebratene Kartoffel</Text>,
-                    'indefinite': <Text>Ich habe eine gute Frau gesehen</Text>,
-                    'definite': <Text>Ich habe die gute Frau gesehen</Text>
+                    'no': <Text>Er isst gebraten<Text style={black}>e</Text> Kartoffel</Text>,
+                    'indefinite': <Text>Ich habe ein<Text style={black}>e</Text> gut<Text style={black}>e</Text> Frau gesehen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>die</Text> gut<Text style={black}>e</Text> Frau gesehen</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Ich habe eine Frau gesehen</Text>,
-                    'definite': <Text>Ich habe die Frau gesehen</Text>
+                    'indefinite': <Text>Ich habe ein<Text style={black}>e</Text>  Frau gesehen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>die</Text> Frau gesehen</Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>Er isst frisches Brot</Text>,
-                    'indefinite': <Text>Ich habe ein gutes Kind gesehen </Text>,
-                    'definite': <Text>Ich habe das gute Kind gesehen</Text>
+                    'no': <Text>Er isst frisch<Text style={black}>es</Text> Brot</Text>,
+                    'indefinite': <Text>Ich habe ein gut<Text style={black}>es</Text> Kind gesehen </Text>,
+                    'definite': <Text>Ich habe <Text style={black}>das</Text> gut<Text style={black}>e</Text> Kind gesehen</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
                     'indefinite': <Text>Ich habe ein Kind gesehen</Text>,
-                    'definite': <Text>Ich habe das Kind gesehen</Text>
+                    'definite': <Text>Ich habe <Text style={black}>das</Text> Kind gesehen</Text>
                 }
             }
         },
         'dative': {
             'masculine': {
                 'with': {
-                    'no': <Text>Pizza schmeckt am besten mit rotem Wein.</Text>,
-                    'indefinite': <Text>Ich habe einem guten Mann geholfen</Text>,
-                    'definite': <Text>Ich habe dem guten Mann geholfen</Text>
+                    'no': <Text>Pizza schmeckt am besten mit rot<Text style={black}>em</Text> Wein.</Text>,
+                    'indefinite': <Text>Ich habe ein<Text style={black}>em</Text> gut<Text style={black}>en</Text> Mann geholfen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>dem</Text> gut<Text style={black}>en</Text> Mann geholfen</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Ich habe einem Mann geholfen</Text>,
-                    'definite': <Text>Ich habe dem Mann geholfen</Text>
+                    'indefinite': <Text>Ich habe ein<Text style={black}>em</Text> Mann geholfen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>dem</Text> Mann geholfen</Text>
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>Bier schmeckt am besten mit gebratener Kartoffel</Text>,
-                    'indefinite': <Text>Ich habe einer guten Frau geholfen</Text>,
-                    'definite': <Text>Ich habe der guten Frau geholfen</Text>
+                    'no': <Text>Bier schmeckt am besten mit gebraten<Text style={black}>er</Text> Kartoffel</Text>,
+                    'indefinite': <Text>Ich habe ein<Text style={black}>er</Text> gut<Text style={black}>en</Text> Frau geholfen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>der</Text> gut<Text style={black}>en</Text> Frau geholfen</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Ich habe einer Frau geholfen</Text>,
-                    'definite': <Text>Ich habe der Frau geholfen</Text>
+                    'indefinite': <Text>Ich habe ein<Text style={black}>er</Text> Frau geholfen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>der</Text> Frau geholfen</Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>Käse schmeckt am besten mit frischem Brot</Text>,
-                    'indefinite': <Text>Ich habe einem guten Kind geholfen</Text>,
-                    'definite': <Text>Ich habe dem guten Kind geholfen</Text>
+                    'no': <Text>Käse schmeckt am besten mit frisch<Text style={black}>em</Text> Brot</Text>,
+                    'indefinite': <Text>Ich habe ein<Text style={black}>em</Text> gut<Text style={black}>en</Text> Kind geholfen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>dem</Text> gut<Text style={black}>en</Text> Kind geholfen</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Ich habe einem Kind geholfen</Text>,
-                    'definite': <Text>Ich habe dem Kind geholfen</Text>
+                    'indefinite': <Text>Ich habe ein<Text style={black}>em</Text> Kind geholfen</Text>,
+                    'definite': <Text>Ich habe <Text style={black}>dem</Text> Kind geholfen</Text>
                 }
             }
         },
         'genitive': {
             'masculine': {
                 'with': {
-                    'no': <Text>Ich mag den Geschmack weißen Weins</Text>,
-                    'indefinite': <Text>Das Geld eines guten Mannes fehlt</Text>,
-                    'definite': <Text>Das Geld des guten Mannes fehlt</Text>
+                    'no': <Text>Ich mag den Geschmack weiß<Text style={black}>en</Text> Wein<Text style={black}>s</Text></Text>,
+                    'indefinite': <Text>Das Geld ein<Text style={black}>es</Text> gut<Text style={black}>en</Text> Mann<Text style={black}>es</Text> fehlt</Text>,
+                    'definite': <Text>Das Geld <Text style={black}>des</Text> gut<Text style={black}>en</Text> Mann<Text style={black}>es</Text> fehlt</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Geld eines Mannes fehlt</Text>,
-                    'definite': <Text>Geld des Mannes fehlt</Text>
+                    'indefinite': <Text>Geld ein<Text style={black}>es</Text> Mann<Text style={black}>es</Text> fehlt</Text>,
+                    'definite': <Text>Geld <Text style={black}>des</Text> Mann<Text style={black}>es</Text> fehlt</Text>
                 }
             },
             'feminine': {
                 'with': {
-                    'no': <Text>Ich mag den Geschmack gebratener Kartoffel</Text>,
-                    'indefinite': <Text>Das Geld einer guten Frau fehlt</Text>,
-                    'definite': <Text>Das Geld der guten Frau fehlt</Text>
+                    'no': <Text>Ich mag den Geschmack gebraten<Text style={black}>er</Text> Kartoffel</Text>,
+                    'indefinite': <Text>Das Geld ein<Text style={black}>er</Text> gut<Text style={black}>en</Text> Frau fehlt</Text>,
+                    'definite': <Text>Das Geld <Text style={black}>der</Text> gut<Text style={black}>en</Text> Frau fehlt</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Geld einer Frau fehlt</Text>,
-                    'definite': <Text>Geld der Frau fehlt</Text>
+                    'indefinite': <Text>Geld ein<Text style={black}>er</Text> Frau fehlt</Text>,
+                    'definite': <Text>Geld <Text style={black}>der</Text> Frau fehlt</Text>
                 }
             },
             'neutral': {
                 'with': {
-                    'no': <Text>Ich mag den Geruch frischen Brots</Text>,
-                    'indefinite': <Text>Das Geld eines guten Kindes fehlt</Text>,
-                    'definite': <Text>Das Geld des guten Kindes fehlt</Text>
+                    'no': <Text>Ich mag den Geruch frisch<Text style={black}>en</Text> Brot<Text style={black}>s</Text></Text>,
+                    'indefinite': <Text>Das Geld ein<Text style={black}>es</Text> gut<Text style={black}>en</Text> Kind<Text style={black}>es</Text> fehlt</Text>,
+                    'definite': <Text>Das Geld <Text style={black}>des</Text> gut<Text style={black}>en</Text> Kind<Text style={black}>es</Text> fehlt</Text>
                 },
                 'without': {
                     'no': <Text>There is not a word with ending for this combination</Text>,
-                    'indefinite': <Text>Geld eines Kindes fehlt</Text>,
-                    'definite': <Text>Geld des Kindes fehlt</Text>
+                    'indefinite': <Text>Geld ein<Text style={black}>es</Text> Kind<Text style={black}>es</Text> fehlt</Text>,
+                    'definite': <Text>Geld <Text style={black}>des</Text> Kind<Text style={black}>es</Text> fehlt</Text>
                 }
             }
         }
