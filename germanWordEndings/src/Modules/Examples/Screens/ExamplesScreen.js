@@ -197,8 +197,8 @@ const Examples = () => {
                 </View>
                 <View>
                      <BannerAd
-                        //unitId="ca-app-pub-8781477890081427/2075472490" 
-                        unitId= {TestIds.BANNER}
+                        unitId="ca-app-pub-8781477890081427/2075472490" 
+                        //unitId= {TestIds.BANNER}
                         size={BannerAdSize.SMART_BANNER}
                         requestOptions={{
                             requestNonPersonalizedAdsOnly: isPersonalized,
