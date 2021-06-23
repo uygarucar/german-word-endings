@@ -196,7 +196,7 @@ const Examples = () => {
                 <View>
                 </View>
                 <View>
-                    {/* <BannerAd
+                     <BannerAd
                         //unitId="ca-app-pub-8781477890081427/2075472490" 
                         unitId= {TestIds.BANNER}
                         size={BannerAdSize.SMART_BANNER}
@@ -210,7 +210,7 @@ const Examples = () => {
                     // onAdFailedToLoad={(error) => {
                     //     console.error('Advert failed to load: ', error);
                     // }}
-                    /> */}
+                    /> 
                 </View>
 
             </View>
