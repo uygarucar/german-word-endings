@@ -241,7 +241,8 @@ const SampleSentences = (props) => {
                 'with': {
                     'no': <Text>Beer tastes best
                         <Animated.Text style={props.orangeStyle}> with </Animated.Text>
-                        <Animated.Text style={props.pinkStyle}>fried </Animated.Text>potato</Text>,
+                        <Animated.Text style={props.pinkStyle}>fried </Animated.Text>
+                        <Animated.Text style={props.greenStyle}>potato</Animated.Text></Text>,
                     'indefinite': <Text>I've
                         <Animated.Text style={props.orangeStyle}> helped </Animated.Text>
                         <Animated.Text style={props.yellowStyle}>a </Animated.Text>
@@ -455,7 +456,7 @@ const SampleSentences = (props) => {
                 'without': {//no adj.
                     'no': <Text>There is not a word with ending for this combination</Text>, // No article
                     'indefinite': <Text>Ich habe ein<Text style={black}>en</Text> Mann gesehen</Text>, //indefinite article
-                    'definite': <Text>Ich habe den Mann gesehen</Text> //definite article
+                    'definite': <Text>Ich habe <Text style={black}>den</Text> Mann gesehen</Text> //definite article
                 }
             },
             'feminine': {

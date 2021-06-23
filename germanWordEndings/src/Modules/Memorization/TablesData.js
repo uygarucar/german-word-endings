@@ -197,7 +197,7 @@ const TablesData = [
             accusative: {
                 masculine: {
                     article: "einen",
-                    adjective: "guter"
+                    adjective: "guten"
                 },
                 feminine: {
                     article: "eine",
